@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Servidores</title>
+
+    <link rel="stylesheet" type="text/css" href="./assets/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <main class="section">
+      <div class="container">
+        <h1 class="title is-3">Estado de los servidores</h1>
+        <table class="table is-striped is-fullwidth">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Servidor</th>
+              <th class="has-text-centered">Estado</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+        <button id="refresh-button" class="button is-responsive">
+          Refrescar
+        </button>
+      </div>
+    </main>
+
+    <script src="./src/index.js" type="module"></script>
+  </body>
+</html>
