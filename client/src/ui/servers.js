@@ -16,7 +16,7 @@ export function createRow(server, index) {
   $td2.innerHTML = `
   <span class="icon-text">
     <span>${server.status}</span>
-    <span class="icon ${server.status ? "has-text-success" : "has-text-danger"}">
+    <span class="icon ${server.status === 200 ? "has-text-success" : "has-text-warning"}">
       <i class="fas fa-${server.status === 200 ? "check-square" : "exclamation-triangle"}"></i>
     </span>
   </span>`;
