@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const { checkHealthServerPost, checkHealthServerGet } = require("./src/routes.js");
+const { checkHealthServerPost, checkHealthServerGet, checkHealthSharpy } = require("./src/routes.js");
 
 const PORT = process.env.PORT || 8080;
 
@@ -38,6 +38,10 @@ app.get("/", async (req, res) => {
             {
                 status: await checkHealthServerGet(process.env.BLIMTOOLKIT_BASE_URL),
                 url: process.env.BLIMTOOLKIT_BASE_URL,
+            },
+            {
+                status: await checkHealthSharpy(process.env.SHARPY_BASE_URL),
+                url: process.env.SHARPY_BASE_URL,
             },
         ];
 

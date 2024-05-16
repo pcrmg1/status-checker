@@ -26,4 +26,16 @@ async function checkHealthServerGet(url) {
         });
 }
 
-module.exports = { checkHealthServerPost, checkHealthServerGet };
+async function checkHealthSharpy(url) {
+    return axios
+        .get(url)
+        .then(response => {
+            console.log(response);
+            return response.status;
+        })
+        .catch(error => {
+            return error.response.status;
+        });
+}
+
+module.exports = { checkHealthServerPost, checkHealthServerGet, checkHealthSharpy };
